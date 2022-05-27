@@ -1,0 +1,39 @@
+body {
+    font-family: "Helvetica", arial, sans-serif;
+    font-size: 16px;
+}
+
+.transaction {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    margin: 0 auto;
+}
+
+
+.menu {
+    display: flex;
+    padding: 10px;
+    background-color: grey;
+    color: white;
+}
+
+.menu li a {
+    text-decoration: none;
+}
+
+.menu li a:visited {
+    color: white;
+}
+
+.menu li {
+    padding-right: 10px;
+    list-style: none;
+    color: white;
+    font-family: "Helvetica", arial, sans-serif;
+    font-size: 14px;
+}

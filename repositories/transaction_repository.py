@@ -24,7 +24,7 @@ def select_all():
     for row in results:
         tag = tag_repository.select(row["tag_id"])
         merchant = merchant_repository.select(row["merchant_id"])
-        transaction = Transaction(row["amount"], merchant, tag, row["id"])
+        transaction = Transaction(row["amount"], tag, merchant, row["id"])
         transactions.append(transaction)
     return transactions
 
@@ -38,7 +38,7 @@ def select(id):
     if result is not None:
         tag = tag_repository.select(result["tag_id"])
         merchant = merchant_repository.select(result["merchant_id"])
-        transaction = Transaction(result["amount"], merchant, tag, result["id"])
+        transaction = Transaction(result["amount"], tag, merchant, result["id"])
     return transaction
 
 
