@@ -1,6 +1,7 @@
 body {
     font-family: "Helvetica", arial, sans-serif;
     font-size: 16px;
+    margin: 0%;
 }
 
 
@@ -14,7 +15,7 @@ body {
 
 .menu {
     display: flex;
-    padding: 10px;
+    padding: 25px;
     background-color: grey;
     color: white;
 }
@@ -38,21 +39,31 @@ body {
 .transaction {
     border: 1px solid #ccc;
     width: 300px;
-    min-height: 68px;
+    min-height: 50px;
     padding: 10px;
-    display: flex;
+
     line-height: 18px;
     margin-bottom: 10px;
 }
 
 .amount {
     font-weight: bold;
-    margin-bottom: 0.5em;
-    margin-left: 10px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .tag {
     color: #8899A6;
     font-size: 13px;
-    margin-left: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+
 }

@@ -2,12 +2,15 @@
 {% block content %}
 {% for transaction in transactions %}
 <div class="transaction">
-    {{transaction.merchant.name }}
-    <div class="amount">
-        £{{transaction.amount}}
-    </div>
-    <div class="tag">
-        {{transaction.tag.name}}
+    {{transaction.merchant.name}}
+    <div class="description">
+
+        <div class="tag">
+            {{transaction.tag.name}}
+        </div>
+        <div class="amount">
+            £{{transaction.amount}}
+        </div>
     </div>
 
 </div>
