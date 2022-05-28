@@ -1,19 +1,60 @@
 {% extends "base.html" %}
 {% block content %}
-{% for transaction in transactions %}
-<div class="transaction">
-    {{transaction.merchant.name}}
-    <div class="description">
 
-        <div class="tag">
-            {{transaction.tag.name}}
+
+<body>
+
+
+    <main class="middle">
+
+        {% for transaction in transactions %}
+        <div class="transaction">
+            {{transaction.merchant.name}}
+            <div class="description">
+
+                <div class="tag">
+                    {{transaction.tag.name}}
+                </div>
+                <div class="amount">
+                    £{{transaction.amount}}
+                </div>
+            </div>
         </div>
-        <div class="amount">
-            £{{transaction.amount}}
-        </div>
-    </div>
 
-</div>
 
-{% endfor %}
+
+
+        {% endfor %}
+
+    </main>
+
+
+    <aside class="right">
+        <form action="/locations" method="post">
+
+            <label for="amount">Add Amount:</label>
+            <input type="number" id="guests" name="guests" min="1" max="200">
+
+            <label for="merchant">Select a Merchant:</label>
+            <select name="merchant_id" id="merchant">
+                {% for location in locations %}
+                <option value="{{ merchant.id }}">{{ merchant.name }}</option>
+                {% endfor %}
+            </select>
+
+
+            <label for="tag">Select a Tag:</label>
+            <select name="tag_id" id="tag">
+                {% for tags in tags %}
+                <option value="{{ tag.id }}">{{ tag.name }}</option>
+                {% endfor %}
+            </select>
+
+            <input class="btn btn--action" type='submit' value="ADD">
+
+        </form>
+    </aside>
+
+</body>
+
 {% endblock %}

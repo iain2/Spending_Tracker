@@ -5,18 +5,37 @@ body {
 }
 
 
+
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 300px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+
+        'left  middle middle right'
+
+
 }
 
+
+
+.left {
+    grid-area: left;
+}
+
+/* Style the middle column */
+.middle {
+    grid-area: middle;
+}
+
+/* Style the right column */
+.right {
+    grid-area: right;
+    width: 300px;
+}
 
 .menu {
     display: flex;
     padding: 25px;
-    background-color: grey;
+    background-color: gray;
     color: white;
 }
 
@@ -54,7 +73,7 @@ body {
     align-items: center;
 }
 
-.tag {
+*/ .tag {
     color: #8899A6;
     font-size: 13px;
 
@@ -66,4 +85,9 @@ body {
     display: flex;
     justify-content: space-between;
 
+}
+
+body>div>aside>form {
+    display: flex;
+    flex-direction: column;
 }
