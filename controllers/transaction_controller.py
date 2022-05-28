@@ -1,7 +1,5 @@
-from crypt import methods
-from gettext import translation
 from flask import Flask, redirect, render_template, Blueprint, request
-from models.transaction import Transaction
+from models.transaction import *
 import repositories.merchant_repository as merchant_repository
 import repositories.tag_repository as tag_repository
 import repositories.transaction_repository as transaction_repository
@@ -14,12 +12,14 @@ def transaction():
     transactions = transaction_repository.select_all()
     tags = tag_repository.select_all()
     merchants = merchant_repository.select_all()
+    total = total_spent(transactions)
 
     return render_template(
         "transactions/index.html",
         transactions=transactions,
         merchants=merchants,
         tags=tags,
+        total=total,
     )
 
 
