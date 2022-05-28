@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<body>
+
+
+    <main class="middle">
+
+        {% for merchant in merchants %}
+        <div class="transaction">
+            {{merchant.name}}
+
+        </div>
+
+
+        {% endfor %}
+
+
+    </main>
+    <aside class="right">
+        <form action="/merchants" method="POST">
+
+            <label for="merchant">Add Merchant:</label>
+            <input type="text" id="merchant" name="merchant" placeholder="Merchant" autofocus>
+
+
+
+            <input class="btn btn--action" type='submit' value="ADD">
+
+        </form>
+    </aside>
+
+    {% endblock %}
