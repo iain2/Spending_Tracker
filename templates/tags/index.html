@@ -10,8 +10,9 @@
         {% for tag in tags %}
         <div class="transaction">
             {{tag.name}}
-
+            <p><a href="/tags/{{tag.id}}/edit">Edit</a></p>
         </div>
+
 
 
         {% endfor %}

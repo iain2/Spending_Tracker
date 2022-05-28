@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+</main>
+<aside class="middle">
+    <form action="/tags/{{tag.id}}" method="POST">
+        {{tag.name}}
+        <label for="tag">Edit Tag:</label>
+        <input type="text" id="tag" name="tag" placeholder="Name" autofocus>
+        <input class="btn btn--action" type='submit' value="UPDATE">
+
+    </form>
+</aside>
+
+{% endblock %}

@@ -26,3 +26,17 @@ def create_tag():
     tag = Tag(tag_name)
     tag_repository.save(tag)
     return redirect("/tags")
+
+
+@tag_blueprint.route("/tags/<id>/edit", methods=["GET"])
+def edit_tag(id):
+    tag = tag_repository.select(id)
+    return render_template("tags/edit.html", tag=tag)
+
+
+@tag_blueprint.route("/tags/<id>", methods=["POST"])
+def update_merchant(id):
+    name = request.form["tag"]
+    tag = Tag(name, id)
+    tag_repository.update(tag)
+    return redirect("/tags")
