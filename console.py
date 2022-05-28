@@ -36,6 +36,10 @@ transaction_repository.update(transaction3)
 
 tags = tag_repository.select_all()
 merchants = merchant_repository.select_all()
-transactions = transaction_repository.select(transaction2.id)
+transactions = transaction_repository.select_all()
 
-print(transactions.__dict__)
+for transaction in transactions:
+    print(transaction.__dict__)
+
+
+pdb.set_trace()

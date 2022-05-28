@@ -11,7 +11,6 @@
         <div class="transaction">
             {{transaction.merchant.name}}
             <div class="description">
-
                 <div class="tag">
                     {{transaction.tag.name}}
                 </div>
@@ -20,32 +19,26 @@
                 </div>
             </div>
         </div>
-
-
-
-
         {% endfor %}
 
     </main>
-
-
     <aside class="right">
-        <form action="/locations" method="post">
+        <form action="/transactions" method="POST">
 
             <label for="amount">Add Amount:</label>
-            <input type="number" id="guests" name="guests" min="1" max="200">
+            <input type="number" id="amount" name="amount" min="1">
 
-            <label for="merchant">Select a Merchant:</label>
-            <select name="merchant_id" id="merchant">
-                {% for location in locations %}
+            <label for="merchant_id">Select a Merchant:</label>
+            <select name="merchant_id" id="merchant_id">
+                {% for merchant in merchants %}
                 <option value="{{ merchant.id }}">{{ merchant.name }}</option>
                 {% endfor %}
             </select>
 
 
-            <label for="tag">Select a Tag:</label>
-            <select name="tag_id" id="tag">
-                {% for tags in tags %}
+            <label for="tag_id">Select a Tag:</label>
+            <select name="tag_id" id="tag_id">
+                {% for tag in tags %}
                 <option value="{{ tag.id }}">{{ tag.name }}</option>
                 {% endfor %}
             </select>
@@ -54,6 +47,8 @@
 
         </form>
     </aside>
+
+
 
 </body>
 
