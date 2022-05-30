@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<main class="middle">
+
+    {% for transaction in transactions %}
+    <div class="transaction">
+        <b> <a href="/merchants/{{transaction.merchant.id}}">{{transaction.merchant.name}}</a></b>
+        <div class="description">
+            <div class="tag">
+                <a href="/tags/{{transaction.tag.id}}">{{transaction.tag.name}}</a>
+                <div class="date">
+                    {{ transaction.date.strftime("%b %d %Y") }}
+                </div>
+
+                <form action="/transactions/{{ transaction.id }}/delete" method="POST">
+                    <input class="btn btn--danger" type="submit" value="delete" />
+                </form>
+            </div>
+
+
+
+            <div class="amount">
+                £{{transaction.amount}}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="transaction">
+        <b>Total spent</b>
+        <div class="amount">
+            £{{total}}
+
+        </div>
+    </div>
+
+
+</main>
+
+{% endblock %}

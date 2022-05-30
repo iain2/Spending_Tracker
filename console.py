@@ -30,18 +30,17 @@ transaction_repository.save(transaction1)
 transaction2 = Transaction(90, tag1, merchant1, datetime.date(2020, 7, 13))
 transaction_repository.save(transaction2)
 
-transaction3 = Transaction(30, transaction2.tag, transaction2.merchant, transaction2.id)
-transaction_repository.update(transaction3)
+# transaction3 = Transaction(30, transaction2.tag, transaction2.merchant, transaction2.id)
+# transaction_repository.update(transaction3)
 
 # tag_repository.delete(tag1.id)
 # merchant_repository.delete(merchant2.id)
 
 tags = tag_repository.select_all()
 merchants = merchant_repository.select_all()
-transactions = transaction_repository.select_all()
+# transaction = transaction_repository.select(transaction1)
 
-for transaction in transactions:
-    print(transaction.__dict__)
+print(transaction1.date.month)
 
 
 pdb.set_trace()
