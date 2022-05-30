@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-This will be the home page. Depending on our UX we might have a dashboard here showing some stats for example.
+<ul class="home">
+    <h1>
+        <li><a href="/transactions">Transactions</a></li>
+        <li><a href="/transactions/month">Transactions by Month</a></li>
+        <li><a href="/merchants">Merchants</a></li>
+        <li><a href="/tags">Tags</a></li>
+    </h1>
+
+</ul>
 
 {% endblock %}
