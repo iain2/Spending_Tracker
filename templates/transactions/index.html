@@ -13,10 +13,9 @@
             <div class="description">
                 <div class="tag">
                     <a href="/tags/{{transaction.tag.id}}">{{transaction.tag.name}}</a>
-                    <br>
-
-
-                    {{ transaction.date.strftime("%b %d %Y") }}
+                    <div class="date">
+                        {{ transaction.date.strftime("%b %d %Y") }}
+                    </div>
 
                     <form action="/transactions/{{ transaction.id }}/delete" method="POST">
                         <input class="btn btn--danger" type="submit" value="delete" />

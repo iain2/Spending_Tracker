@@ -84,10 +84,34 @@ body {
 .description {
     display: flex;
     justify-content: space-between;
+    color: gray;
+    font-size: smaller;
 
 }
 
 body>div>aside>form {
     display: flex;
     flex-direction: column;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.date {
+    color: #8899A6;
+    font-size: smaller;
 }
