@@ -142,3 +142,7 @@ a:active {
     grid-area: middle;
     font-size: xx-large;
 }
+
+.month_list {
+    list-style: none;
+}
