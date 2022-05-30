@@ -13,6 +13,10 @@
             <div class="description">
                 <div class="tag">
                     <a href="/tags/{{transaction.tag.id}}">{{transaction.tag.name}}</a>
+                    <br>
+
+
+                    {{ transaction.date.strftime("%b %d %Y") }}
 
                     <form action="/transactions/{{ transaction.id }}/delete" method="POST">
                         <input class="btn btn--danger" type="submit" value="delete" />
@@ -57,6 +61,9 @@
                 <option value="{{ tag.id }}">{{ tag.name }}</option>
                 {% endfor %}
             </select>
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date">
+
 
             <input class="btn btn--action" type='submit' value="ADD">
 

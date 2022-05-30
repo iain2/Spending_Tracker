@@ -9,7 +9,7 @@
 
         {% for merchant in merchants %}
         <div class="transaction">
-            {{merchant.name}}
+            <a href="/merchants/{{merchant.id}}">{{merchant.name}}</a>
             <p><a href="/merchants/{{merchant.id}}/edit">Edit</a></p>
 
         </div>

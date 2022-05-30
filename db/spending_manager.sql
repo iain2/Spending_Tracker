@@ -21,6 +21,7 @@ CREATE TABLE merchants(
 CREATE TABLE transactions(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     amount INT,
+    date DATE,
     tag_id INTEGER NOT NULL,
     merchant_id INTEGER NOT NULL,
         FOREIGN KEY (tag_id)

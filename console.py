@@ -2,6 +2,8 @@ import pdb
 from models.merchant import Merchant
 from models.tag import Tag
 from models.transaction import Transaction
+import datetime
+
 
 import repositories.tag_repository as tag_repository
 import repositories.merchant_repository as merchant_repository
@@ -23,9 +25,9 @@ merchant2 = Merchant("ASDA")
 merchant_repository.save(merchant1)
 merchant_repository.save(merchant2)
 
-transaction1 = Transaction(60, tag2, merchant2)
+transaction1 = Transaction(60, tag2, merchant2, datetime.date(2020, 5, 17))
 transaction_repository.save(transaction1)
-transaction2 = Transaction(90, tag1, merchant1)
+transaction2 = Transaction(90, tag1, merchant1, datetime.date(2020, 7, 13))
 transaction_repository.save(transaction2)
 
 transaction3 = Transaction(30, transaction2.tag, transaction2.merchant, transaction2.id)
