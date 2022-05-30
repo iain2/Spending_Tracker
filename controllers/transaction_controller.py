@@ -38,6 +38,10 @@ def create_transaction():
     transaction_repository.save(transaction)
     return redirect("/transactions")
 
+@transaction_blueprint.route("/transactions/<id>/delete", methods=['POST'])
+def delete_transaction(id):
+    transaction_repository.delete(id)
+    return redirect('/transactions')
 
 # form for new tags
 
