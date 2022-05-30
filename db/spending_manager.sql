@@ -3,6 +3,7 @@ PRAGMA FOREIGN_KEYS = ON;
 DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS merchants;
 DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE tags(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -30,5 +31,8 @@ CREATE TABLE transactions(
             REFERENCES merchants (id)
     );
 
-
-  
+CREATE TABLE users(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    amount INT,
+    name VARCHAR
+);

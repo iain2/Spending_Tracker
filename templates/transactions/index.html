@@ -31,11 +31,13 @@
         </div>
         {% endfor %}
         <div class="transaction">
-            <b>Total spent</b>
-            <div class="amount">
-                £{{total}}
 
+            <b>Total spent</b><br>
+
+            <div class="amount">
+                £{{total}} <br><br>
             </div>
+            Budget Remaining for {{user.name}}: <b>£{{user.amount - total}}</b> of £{{user.amount}}
         </div>
 
 

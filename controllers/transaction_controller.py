@@ -3,6 +3,7 @@ from models.transaction import *
 import repositories.merchant_repository as merchant_repository
 import repositories.tag_repository as tag_repository
 import repositories.transaction_repository as transaction_repository
+import repositories.user_repository as user_repository
 import datetime
 
 transaction_blueprint = Blueprint("Transactions", __name__)
@@ -14,6 +15,8 @@ def transaction():
     tags = tag_repository.select_all()
     merchants = merchant_repository.select_all()
     total = total_spent(transactions)
+    users = user_repository.select_all()
+    user = users[0]
 
     return render_template(
         "transactions/index.html",
@@ -21,6 +24,7 @@ def transaction():
         merchants=merchants,
         tags=tags,
         total=total,
+        user=user,
     )
 
 

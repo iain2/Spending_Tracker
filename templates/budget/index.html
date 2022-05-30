@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<aside class="middle">
+    {% for user in users %}
+    <div class="transaction">
+        {{user.name}}<br>
+
+        Budget: £{{user.amount}}
+        <p><a href="/budget/{{user.id}}/edit">Edit</a></p>
+    </div>
+
+
+
+
+
+
+
+    {% endfor %}
+    {% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+</main>
+<aside class="middle">
+    <form action="/budget/{{user.id}}/edit" method="POST">
+        {{user.name}}
+        <label for="budget">Edit Tag:</label>
+        <input type="text" id="name" name="name" placeholder="Name" autofocus>
+        <input type="number" id="amount" name="amount">
+        <input class="btn btn--action" type='submit' value="UPDATE">
+
+    </form>
+</aside>
+
+{% endblock %}
