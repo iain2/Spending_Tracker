@@ -40,3 +40,12 @@ def update_merchant(id):
     print(merchant.name)
     merchant_repository.update(merchant)
     return redirect("/merchants")
+
+
+@merchant_blueprint.route("/merchants/<id>")
+def show(id):
+    merchant = merchant_repository.select(id)
+    transactions = transaction_repository.merchants(merchant)
+    return render_template(
+        "merchants/show.html", transactions=transactions, merchant=merchant
+    )

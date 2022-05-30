@@ -9,7 +9,7 @@
 
         {% for transaction in transactions %}
         <div class="transaction">
-            <b>{{transaction.merchant.name}}</b>
+            <b> <a href="/merchants/{{transaction.merchant.id}}">{{transaction.merchant.name}}</a></b>
             <div class="description">
                 <div class="tag">
                     <a href="/tags/{{transaction.tag.id}}">{{transaction.tag.name}}</a>

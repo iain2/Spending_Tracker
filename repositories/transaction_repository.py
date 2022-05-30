@@ -77,3 +77,18 @@ def tags(tag):
         transactions.append(transaction)
 
     return transactions
+
+
+def merchants(merchant):
+    transactions = []
+
+    sql = "SELECT * FROM transactions WHERE merchant_id = ?"
+    values = [merchant.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        tag = tag_repository.select(row["tag_id"])
+        transaction = Transaction(row["amount"], tag, merchant, row["id"])
+        transactions.append(transaction)
+
+    return transactions
