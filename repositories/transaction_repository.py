@@ -62,3 +62,18 @@ def update(transaction):
         transaction.id,
     ]
     run_sql(sql, values)
+
+
+def tags(tag):
+    transactions = []
+
+    sql = "SELECT * FROM transactions WHERE tag_id = ?"
+    values = [tag.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        merchant = merchant_repository.select(row["merchant_id"])
+        transaction = Transaction(row["amount"], tag, merchant, row["id"])
+        transactions.append(transaction)
+
+    return transactions

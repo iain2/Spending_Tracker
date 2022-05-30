@@ -40,3 +40,10 @@ def update_merchant(id):
     tag = Tag(name, id)
     tag_repository.update(tag)
     return redirect("/tags")
+
+
+@tag_blueprint.route("/tags/<id>")
+def show(id):
+    tag = tag_repository.select(id)
+    transactions = transaction_repository.tags(tag)
+    return render_template("tags/show.html", transactions=transactions, tag=tag)

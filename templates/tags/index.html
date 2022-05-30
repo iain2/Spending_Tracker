@@ -9,7 +9,7 @@
 
         {% for tag in tags %}
         <div class="transaction">
-            {{tag.name}}
+            <a href="/tags/{{tag.id}}">{{tag.name}}</a>
             <p><a href="/tags/{{tag.id}}/edit">Edit</a></p>
         </div>
 

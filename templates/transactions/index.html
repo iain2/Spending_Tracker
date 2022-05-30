@@ -12,15 +12,15 @@
             <b>{{transaction.merchant.name}}</b>
             <div class="description">
                 <div class="tag">
-                    {{transaction.tag.name}}
+                    <a href="/tags/{{transaction.tag.id}}">{{transaction.tag.name}}</a>
 
                     <form action="/transactions/{{ transaction.id }}/delete" method="POST">
                         <input class="btn btn--danger" type="submit" value="delete" />
-                      </form>
+                    </form>
                 </div>
-            
-                    
-                  
+
+
+
                 <div class="amount">
                     £{{transaction.amount}}
                 </div>
