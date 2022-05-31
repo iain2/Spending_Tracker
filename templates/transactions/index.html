@@ -43,36 +43,39 @@
 
     </main>
     <aside class="right">
-        <form action="/transactions" method="POST">
+        <div class="sticky">
+            <form action="/transactions" method="POST">
 
-            <label for="amount">Add Amount:</label>
-            <input type="number" id="amount" name="amount" min="1" autofocus required>
+                <label for="amount">Add Amount:</label>
+                <input type="number" id="amount" name="amount" min="1" autofocus required>
 
-            <label for="merchant_id">Select a Merchant:</label>
-            <select name="merchant_id" id="merchant_id">
-                {% for merchant in merchants %}
-                {% if merchant.active %}
-                <option value="{{ merchant.id }}">{{ merchant.name }}</option>
-                {% endif %}
-                {% endfor %}
-            </select>
-
-
-            <label for="tag_id">Select a Tag:</label>
-            <select name="tag_id" id="tag_id">
-                {% for tag in tags %}
-                {% if tag.active %}
-                <option value="{{ tag.id }}">{{ tag.name }}</option>
-                {% endif %}
-                {% endfor %}
-            </select>
-            <label for="date">Date</label>
-            <input type="date" name="date" id="date">
+                <label for="merchant_id">Select a Merchant:</label>
+                <select name="merchant_id" id="merchant_id">
+                    {% for merchant in merchants %}
+                    {% if merchant.active %}
+                    <option value="{{ merchant.id }}">{{ merchant.name }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
 
 
-            <input class="btn btn--action" type='submit' value="ADD">
+                <label for="tag_id">Select a Tag:</label>
+                <select name="tag_id" id="tag_id">
+                    {% for tag in tags %}
+                    {% if tag.active %}
+                    <option value="{{ tag.id }}">{{ tag.name }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date">
 
-        </form>
+
+                <input class="btn btn--action" type='submit' value="ADD">
+
+            </form>
+        </div>
+
     </aside>
 
 

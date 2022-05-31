@@ -25,13 +25,15 @@
 
     </main>
     <aside class="right">
-        <form action="/tags" method="POST">
+        <div class="sticky">
+            <form action="/tags" method="POST">
 
-            <label for="tag">Add Tag:</label>
-            <input type="text" id="tag" name="tag" placeholder="Tag" autofocus required>
-            <input class="btn btn--action" type='submit' value="ADD">
+                <label for="tag">Add Tag:</label>
+                <input type="text" id="tag" name="tag" placeholder="Tag" autofocus required>
+                <input class="btn btn--action" type='submit' value="ADD">
 
-        </form>
+            </form>
+        </div>
     </aside>
 
     {% endblock %}

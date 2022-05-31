@@ -93,7 +93,7 @@ body {
 
 }
 
-body>div>aside>form {
+body>div>aside>div>form {
     display: flex;
     flex-direction: column;
 }
@@ -145,4 +145,11 @@ a:active {
 
 .month_list {
     list-style: none;
+}
+
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
 }

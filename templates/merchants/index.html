@@ -25,16 +25,18 @@
 
     </main>
     <aside class="right">
-        <form action="/merchants" method="POST">
+        <div class="sticky">
+            <form action="/merchants" method="POST">
 
-            <label for="merchant">Add Merchant:</label>
-            <input type="text" id="merchant" name="merchant" placeholder="Merchant" autofocus required>
+                <label for="merchant">Add Merchant:</label>
+                <input type="text" id="merchant" name="merchant" placeholder="Merchant" autofocus required>
 
 
 
-            <input class="btn btn--action" type='submit' value="ADD">
+                <input class="btn btn--action" type='submit' value="ADD">
 
-        </form>
+            </form>
+        </div>
     </aside>
 
     {% endblock %}
