@@ -5,7 +5,12 @@
     <form action="/tags/{{tag.id}}" method="POST">
         {{tag.name}}
         <label for="tag">Edit Tag:</label>
-        <input type="text" id="tag" name="tag" placeholder="Name" autofocus>
+        <input type="text" id="tag" name="tag" placeholder="{{tag.name}}" value="{{tag.name}}" autofocus>
+        <label for="active">Deactivate:</label>
+        <select name="active" id="active">
+            <option value="1">Active</option>
+            <option value="0">Deactive</option>
+        </select>
         <input class="btn btn--action" type='submit' value="UPDATE">
 
     </form>

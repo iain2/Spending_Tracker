@@ -7,9 +7,8 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE tags(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name VARCHAR
-    -- coulour of tag
-    -- availabilty BOOL
+    name VARCHAR,
+    active BOOLEAN
 );
 
 CREATE TABLE merchants(

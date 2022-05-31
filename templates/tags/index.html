@@ -10,6 +10,11 @@
         {% for tag in tags %}
         <div class="transaction">
             <a href="/tags/{{tag.id}}">{{tag.name}}</a>
+            {% if tag.active %}
+            <p>Active: &#9989;</p>
+            {% else %}
+            <p>Active: &#10060;</p>
+            {% endif %}
             <p><a href="/tags/{{tag.id}}/edit">Edit</a></p>
         </div>
 
@@ -24,9 +29,6 @@
 
             <label for="tag">Add Tag:</label>
             <input type="text" id="tag" name="tag" placeholder="Tag" autofocus>
-
-
-
             <input class="btn btn--action" type='submit' value="ADD">
 
         </form>

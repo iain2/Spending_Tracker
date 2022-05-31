@@ -37,7 +37,7 @@
             <div class="amount">
                 £{{total}} <br><br>
             </div>
-            Budget Remaining for {{user.name}}: <b>£{{user.amount - total}}</b> of £{{user.amount}}
+            Budget Remaining: <b>£{{user.amount - total}}</b> of £{{user.amount}}
         </div>
 
 
@@ -59,7 +59,9 @@
             <label for="tag_id">Select a Tag:</label>
             <select name="tag_id" id="tag_id">
                 {% for tag in tags %}
+                {% if tag.active %}
                 <option value="{{ tag.id }}">{{ tag.name }}</option>
+                {% endif %}
                 {% endfor %}
             </select>
             <label for="date">Date</label>

@@ -37,7 +37,8 @@ def edit_tag(id):
 @tag_blueprint.route("/tags/<id>", methods=["POST"])
 def update_merchant(id):
     name = request.form["tag"]
-    tag = Tag(name, id)
+    active = request.form["active"]
+    tag = Tag(name, active, id)
     tag_repository.update(tag)
     return redirect("/tags")
 

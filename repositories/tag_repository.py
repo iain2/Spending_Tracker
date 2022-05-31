@@ -4,8 +4,8 @@ from models.tag import Tag
 
 
 def save(tag):
-    sql = "INSERT INTO tags (name) VALUES (?) RETURNING *"
-    values = [tag.name]
+    sql = "INSERT INTO tags (name, active) VALUES (?,?) RETURNING *"
+    values = [tag.name, tag.active]
     results = run_sql(sql, values)
     id = results[0]["id"]
     tag.id = id
@@ -19,7 +19,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        tag = Tag(row["name"], row["id"])
+        tag = Tag(row["name"], bool(row["active"]), row["id"])
         tags.append(tag)
     return tags
 
@@ -31,7 +31,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        tag = Tag(result["name"], result["id"])
+        tag = Tag(result["name"], bool(result["active"]), result["id"])
     return tag
 
 
@@ -47,6 +47,6 @@ def delete(id):
 
 
 def update(tag):
-    sql = "UPDATE tags SET (name) = (?) WHERE id = ?"
-    values = [tag.name, tag.id]
+    sql = "UPDATE tags SET (name, active) = (?,?) WHERE id = ?"
+    values = [tag.name, tag.active, tag.id]
     run_sql(sql, values)

@@ -38,14 +38,23 @@ user_repository.save(user1)
 
 users = user_repository.select_all()
 user = users[0]
-print(user.name)
+
 
 user1 = User(1000, "Iain", user1.id)
 
 user_repository.update(user1)
 users = user_repository.select_all()
 user = users[0]
-print(user.name)
+
+
+tag1 = tag_repository.select(tag2.id)
+print(tag1.active)
+
+tag2 = Tag(tag2.name, False, tag2.id)
+tag_repository.update(tag2)
+tag_repository.select(tag2.id)
+
+print(tag2.active)
 
 
 # transaction3 = Transaction(30, transaction2.tag, transaction2.merchant, transaction2.id)
