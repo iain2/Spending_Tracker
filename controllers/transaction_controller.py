@@ -12,6 +12,7 @@ transaction_blueprint = Blueprint("Transactions", __name__)
 @transaction_blueprint.route("/transactions")
 def transaction():
     transactions = transaction_repository.select_all()
+    transactions.sort(key=lambda x: x.date)
     tags = tag_repository.select_all()
     merchants = merchant_repository.select_all()
     total = total_spent(transactions)
