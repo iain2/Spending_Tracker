@@ -36,40 +36,4 @@ transaction_repository.save(transaction2)
 user1 = User(2000, "Harry")
 user_repository.save(user1)
 
-users = user_repository.select_all()
-user = users[0]
-
-
-user1 = User(1000, "Iain", user1.id)
-
-user_repository.update(user1)
-users = user_repository.select_all()
-user = users[0]
-
-
-# tag1 = tag_repository.select(tag2.id)
-# print(tag1.active)
-
-# tag2 = Tag(tag2.name, False, tag2.id)
-# tag_repository.update(tag2)
-# tag_repository.select(tag2.id)
-
-# print(tag2.active)
-
-merchant = merchant_repository.select(merchant2.id)
-
-print(merchant.active)
-
-
-# transaction3 = Transaction(30, transaction2.tag, transaction2.merchant, transaction2.id)
-# transaction_repository.update(transaction3)
-
-# tag_repository.delete(tag1.id)
-# merchant_repository.delete(merchant2.id)
-
-tags = tag_repository.select_all()
-merchants = merchant_repository.select_all()
-# transaction = transaction_repository.select(transaction1)
-
-
 pdb.set_trace()

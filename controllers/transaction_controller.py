@@ -29,16 +29,10 @@ def transaction():
     )
 
 
-# 'POST' form for add new transactions
-# drop down list for tags and merchants
-
-
 @transaction_blueprint.route("/transactions", methods=["POST"])
 def create_transaction():
     date = request.form["date"]
-    # Split the date into a list
     split_date = date.split("-")
-    # create a new date object
     date = datetime.date(int(split_date[0]), int(split_date[1]), int(split_date[2]))
     amount = request.form["amount"]
     merchant_id = request.form["merchant_id"]
@@ -78,28 +72,3 @@ def transaction_by_month(month):
     return render_template(
         "transactions/show.html", transactions=selected_transactions, total=total
     )
-
-
-#     split_date = date.split("-")
-#     date = datetime.date(0, int(split_date[0]), int(split_date[1]))
-#     # month = date.month
-#     transactions = transaction_repository.select_by_month(date)
-#     tags = tag_repository.select_all()
-#     merchants = merchant_repository.select_all()
-#     total = total_spent(transactions)
-
-#     return render_template(
-#         "transactions/month.html",
-#         transactions=transactions,
-#         merchants=merchants,
-#         tags=tags,
-#         total=total,
-#     )
-
-
-# form for new tags
-
-# form for new merchants
-
-# total spent
-# select_all loop through add translation.amount to total return total

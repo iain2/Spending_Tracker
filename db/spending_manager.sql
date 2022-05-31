@@ -15,7 +15,6 @@ CREATE TABLE merchants(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR,
     active BOOLEAN
-    -- logo of merchant
 );
 
 CREATE TABLE transactions(
