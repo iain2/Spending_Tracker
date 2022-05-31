@@ -51,7 +51,9 @@
             <label for="merchant_id">Select a Merchant:</label>
             <select name="merchant_id" id="merchant_id">
                 {% for merchant in merchants %}
+                {% if merchant.active %}
                 <option value="{{ merchant.id }}">{{ merchant.name }}</option>
+                {% endif %}
                 {% endfor %}
             </select>
 

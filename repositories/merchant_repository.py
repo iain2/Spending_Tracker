@@ -4,8 +4,8 @@ from models.merchant import Merchant
 
 
 def save(merchant):
-    sql = "INSERT INTO merchants (name) VALUES (?) RETURNING *"
-    values = [merchant.name]
+    sql = "INSERT INTO merchants (name, active) VALUES (?,?) RETURNING *"
+    values = [merchant.name, merchant.active]
     results = run_sql(sql, values)
     id = results[0]["id"]
     merchant.id = id
@@ -19,7 +19,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        merchant = Merchant(row["name"], row["id"])
+        merchant = Merchant(row["name"], bool(row["active"]), row["id"])
         merchants.append(merchant)
     return merchants
 
@@ -31,7 +31,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        merchant = Merchant(result["name"], result["id"])
+        merchant = Merchant(result["name"], bool(result["active"]), result["id"])
     return merchant
 
 
@@ -47,6 +47,6 @@ def delete(id):
 
 
 def update(merchant):
-    sql = "UPDATE merchants SET (name) = (?) WHERE id = ?"
-    values = [merchant.name, merchant.id]
+    sql = "UPDATE merchants SET (name, active) = (?,?) WHERE id = ?"
+    values = [merchant.name, merchant.active, merchant.id]
     run_sql(sql, values)

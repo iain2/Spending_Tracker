@@ -5,7 +5,12 @@
     <form action="/merchants/{{merchant.id}}" method="POST">
         {{merchant.name}}
         <label for="merchant">Edit Merchant:</label>
-        <input type="text" id="merchant" name="merchant" placeholder="Name" autofocus>
+        <input type="text" id="merchant" name="merchant" placeholder="Name" value="{{merchant.name}}" autofocus>
+        <label for="active">Deactivate:</label>
+        <select name="active" id="active">
+            <option value="1">Active</option>
+            <option value="0">Deactive</option>
+        </select>
         <input class="btn btn--action" type='submit' value="UPDATE">
 
     </form>

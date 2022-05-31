@@ -47,14 +47,18 @@ users = user_repository.select_all()
 user = users[0]
 
 
-tag1 = tag_repository.select(tag2.id)
-print(tag1.active)
+# tag1 = tag_repository.select(tag2.id)
+# print(tag1.active)
 
-tag2 = Tag(tag2.name, False, tag2.id)
-tag_repository.update(tag2)
-tag_repository.select(tag2.id)
+# tag2 = Tag(tag2.name, False, tag2.id)
+# tag_repository.update(tag2)
+# tag_repository.select(tag2.id)
 
-print(tag2.active)
+# print(tag2.active)
+
+merchant = merchant_repository.select(merchant2.id)
+
+print(merchant.active)
 
 
 # transaction3 = Transaction(30, transaction2.tag, transaction2.merchant, transaction2.id)

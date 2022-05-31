@@ -10,6 +10,11 @@
         {% for merchant in merchants %}
         <div class="transaction">
             <a href="/merchants/{{merchant.id}}">{{merchant.name}}</a>
+            {% if merchant.active %}
+            <p>Active: &#9989;</p>
+            {% else %}
+            <p>Active: &#10060;</p>
+            {% endif %}
             <p><a href="/merchants/{{merchant.id}}/edit">Edit</a></p>
 
         </div>
