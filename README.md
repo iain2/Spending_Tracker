@@ -10,4 +10,4 @@ python3 console.py
 # run app
 flask run
 
-open link to browser 
+
