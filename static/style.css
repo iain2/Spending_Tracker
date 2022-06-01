@@ -4,12 +4,15 @@ body {
     margin: 0%;
 }
 
+
+
 .container {
     display: grid;
     min-height: 100vh;
     grid-template-areas:
         'left  middle middle right'
 }
+
 
 .left {
     grid-area: left;
