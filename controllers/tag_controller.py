@@ -14,7 +14,7 @@ def tags():
 
     tags = tag_repository.select_all()
 
-    return render_template("tags/index.html", tags=tags, total=total)
+    return render_template("tags/index.html", tags=tags)
 
 
 @tag_blueprint.route("/tags", methods=["POST"])
