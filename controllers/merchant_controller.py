@@ -46,6 +46,7 @@ def update_merchant(id):
 def show_merchant(id):
     merchant = merchant_repository.select(id)
     transactions = transaction_repository.merchants(merchant)
+    total = total_spent(transactions)
     return render_template(
-        "merchants/show.html", transactions=transactions, merchant=merchant
+        "merchants/show.html", transactions=transactions, merchant=merchant, total=total
     )

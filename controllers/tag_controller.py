@@ -14,10 +14,7 @@ def tags():
 
     tags = tag_repository.select_all()
 
-    return render_template(
-        "tags/index.html",
-        tags=tags,
-    )
+    return render_template("tags/index.html", tags=tags, total=total)
 
 
 @tag_blueprint.route("/tags", methods=["POST"])
@@ -40,6 +37,7 @@ def update_merchant(id):
     active = request.form["active"]
     tag = Tag(name, active, id)
     tag_repository.update(tag)
+
     return redirect("/tags")
 
 
@@ -47,4 +45,7 @@ def update_merchant(id):
 def show(id):
     tag = tag_repository.select(id)
     transactions = transaction_repository.tags(tag)
-    return render_template("tags/show.html", transactions=transactions, tag=tag)
+    total = total_spent(transactions)
+    return render_template(
+        "tags/show.html", transactions=transactions, total=total, tag=tag
+    )
