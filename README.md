@@ -9,7 +9,7 @@ A budget can be set and is displayed next to the transactions showing how much o
 
 
 # Database set_up
-sqlite3 spending_manager.db < spending_manager.sql
+sqlite3 db/spending_manager.db < db/spending_manager.sql
 
 # Populate database 
 python3 console.py
