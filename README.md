@@ -29,7 +29,8 @@ Transactions can be filtered by month on the sort by month page to allow the use
 
 #
 
-![image](https://user-images.githubusercontent.com/102697747/206194273-3bced847-109b-44e4-8476-99226eaaced2.png)
+![image](https://user-images.githubusercontent.com/102697747/206195156-f0664b03-4f2b-4258-841f-3b9aa29d560b.png)
+
 
 #
 
