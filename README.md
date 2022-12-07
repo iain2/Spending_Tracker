@@ -60,3 +60,11 @@ python3 console.py
 ```
 flask run
 ```
+## Built with
+
+-[Python]
+
+-[Flask]
+
+-[SQLite]
+
